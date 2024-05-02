@@ -19,5 +19,5 @@ PYTHONPATH='.' luigid
 
 ## Run luigi script
 ```bash
-PYTHONPATH='.' luigi --module hw1/main CleanupProjectTask --url "https://www.ncbi.nlm.nih.gov/geo/download/?acc=GSE68849&format=file" --output-file "GSE68849_RAW.tar" 
+PYTHONPATH='.' luigi --module main CleanupProjectTask --url "https://www.ncbi.nlm.nih.gov/geo/download/?acc=GSE68849&format=file" --output-file "GSE68849_RAW.tar" 
 ```
