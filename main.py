@@ -54,7 +54,7 @@ class DownloadTask(luigi.Task):
 
 class UntarTask(luigi.Task):
     """
-    Распаковывает tar файл в config.TAR_DIR
+    Шаг 2.1. Распаковывает tar файл в config.TAR_DIR
     """
     url = luigi.Parameter()
     output_file = luigi.Parameter()
@@ -74,7 +74,7 @@ class UntarTask(luigi.Task):
 
 class ExtractGzTask(luigi.Task):
     """
-    Распаковывает gz файлы в папки внутри config.GZ_DIR
+    Шаг 2.2. Распаковывает gz файлы в папки внутри config.GZ_DIR
     """
     url = luigi.Parameter()
     output_file = luigi.Parameter()
@@ -114,7 +114,7 @@ class ExtractGzTask(luigi.Task):
 
 class ParseDatasetTask(luigi.Task):
     """
-    Задача по разбору разархивированных текстовых файлов и созданию датасетов в формате tsv
+    Шаг 2.3. Задача по разбору разархивированных текстовых файлов и созданию датасетов в формате tsv
     """
     url = luigi.Parameter()
     output_file = luigi.Parameter()
@@ -189,6 +189,9 @@ class CleanupProbesTask(luigi.Task):
 
 
 class CleanupProjectTask(luigi.Task):
+    """
+    Шаг 4. Очищает проект, путем удаления разархивированных текстовых файлов, появившихся на этапе ExtractGzTask
+    """
     url = luigi.Parameter()
     output_file = luigi.Parameter()
 
